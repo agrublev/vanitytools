@@ -15,7 +15,7 @@ specify
             auto_slide: true,
 			key_slide: true,
 			hover_pause: true,
-			auto_slide_seconds: 5000
+			auto_slide_seconds: 4000
         };
         var options = $.extend(defaults, options);
 
