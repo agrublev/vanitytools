@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jQuery Super Slick Bar</title>
+<style>
+.bar { width:98%; position:fixed; bottom:0px; left:1%; min-width:800px; border-top:1px solid #ccc; border-left:1px solid #ccc; border-right:1px solid #ccc; 
+background: #EEEEEE; /* old browsers */
+background: -moz-linear-gradient(top, #EEEEEE 0%, #D6D6D6 100%); /* firefox */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEEEEE), color-stop(100%,#D6D6D6)); /* webkit */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEEEEE', endColorstr='#D6D6D6',GradientType=0 ); /* ie */
+height:26px; -moz-border-radius-topleft: 2px;
+-moz-border-radius-topright: 2px;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+-webkit-box-shadow: 0px 0px 4px #000000, 0px 0px 1px #fff inset;
+-moz-box-shadow: 0px 0px 4px #000000, 0px 0px 1px #fff inset;
+box-shadow: 0px 0px 4px #000000, 0px 0px 1px #fff inset; 
+}
+.bar ul {margin:0px; padding:0px; list-style:none; text-shadow:-1px -1px 0px #fff; }
+.bar .left {float:left; border-right:1px solid #fff;}
+.bar .left > li, .bar .right > li {float:left; border-right:1px solid #ccc; border-left:1px solid #fff; position:relative;}
+.bar .left > li a, .bar .right > li a {display:block; height:26px; color:#333; font-size:13px; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; padding:2px 8px; text-decoration:none;}
+
+.bar .right {float:right; border-left:1px solid #ccc;}
+
+.bar .left > li:first-child {border-left:none;}
+.bar .right > li:last-child {border-right:none;}
+
+.bar ul > li > div.content {display:none; position:absolute; bottom:30px; border-top:1px solid #ccc; border-left:1px solid #ccc; border-right:1px solid #ccc; background-color:#fff; left:-1px; width:220px; font-size:11px; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+-webkit-box-shadow: 1px -2px 2px #CCC;-moz-box-shadow: 1px -2px 2px #CCC;box-shadow: 1px -2px 2px #CCC}
+.bar ul > li > div.content > p {padding:0px 10px;}
+.bar > ul > li > div.content > ul.inner > li > a {font-size:11px;}
+.bar > ul > li > div.content > h3.title {background-color:#eee; border-bottom:1px solid #ccc; top:0px; margin:0px 0px 5px 0px; padding:3px; line-height:1em; font-family:Verdana, Geneva, sans-serif; font-size:10px; position:relative;}
+.bar > ul > li > div.content > h3.title a.close {float:right; font-weight:600; font-size:8px; position:absolute; right:2px; top:1px; display:inline-block; border:1px solid #ccc; height:10px; width:10px; padding:0px; text-align:center; background-color:#fff; cursor:pointer; -moz-border-radius: 3px; border-radius: 3px;}
+.bar > ul > li > div.content > h3.title a.close:hover, .bar > ul > li > div.content > h3.title:hover a.close {background-color:#000; color:#fff; border:1px solid #fff; text-shadow:none;}
+
+.bar > ul > li.active > a {background-color:#fff; margin-top:-1px; position:relative;}
+
+.col_left {width:30%; float:left; margin-right:5%;}
+.col_right {float:left; width:60%;}
+</style>
+<script src="jquery.js"></script>
+<script src="jBar.js"></script>
+<script>
+$(document).ready(function(){
+	$(".bar").jBar();
+});
+</script>
+</head>
+
+<body>
+<div class="col_left">
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae ligula vitae neque porttitor mollis. Sed tempus, elit et imperdiet porttitor, sem libero ultricies nisl, ac molestie dui ante id nisl. Phasellus varius viverra diam, eget molestie nisl porta a. Nullam euismod nisi et odio consequat cursus fermentum nisl eleifend. Etiam in tempus purus. Nunc ac ipsum a augue ultricies tempus. Duis eget ipsum turpis. Donec nulla quam, consequat id vehicula non, bibendum eget eros. Aenean est justo, adipiscing non luctus at, interdum id dolor. Sed sed felis a lorem dictum elementum aliquam id nunc. Quisque magna elit, hendrerit vel rutrum in, pulvinar quis quam. Aliquam sollicitudin neque quis risus semper ac pulvinar lacus porta. Curabitur vel ante ligula. Etiam sit amet urna est, eget pretium diam. Sed eget lorem libero. Phasellus quis justo ac lorem volutpat dapibus quis eget ante. Praesent at dignissim velit. Aenean et libero id sapien pharetra laoreet nec viverra ante.</p>
+
+<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec commodo viverra sodales. Aenean hendrerit, eros eu aliquet venenatis, nisi risus interdum ante, quis convallis neque metus in elit. Quisque in mauris sem. Nulla sodales, odio nec ultrices varius, nisl nulla vehicula erat, sit amet placerat nisl enim vel massa. Phasellus pharetra adipiscing sem, ut pharetra lectus placerat sed. Ut vulputate facilisis odio, eget congue ante porta a. Etiam aliquam eleifend sem, vitae mollis metus rhoncus pellentesque. Etiam ullamcorper tincidunt ipsum ac vehicula. Phasellus rutrum elementum sagittis. Integer volutpat porta volutpat. In fringilla tempus leo vel facilisis. Duis vestibulum molestie lacus, in imperdiet dui pellentesque nec. Quisque non tortor sit amet nunc tincidunt hendrerit ultricies sed sem. Cras odio lorem, rutrum vestibulum fringilla et, ultrices quis eros. Nulla gravida nunc sed magna convallis sit amet congue est semper. Duis id convallis est. Proin ac nibh at ipsum tempus vulputate. Curabitur viverra fringilla fringilla. Pellentesque at purus ac tellus sagittis pretium id nec massa.</p>
+
+<p>Aliquam erat volutpat. Proin pharetra fringilla justo, sed placerat dolor fermentum nec. Nulla facilisi. Nullam at sem libero, sit amet iaculis urna. Pellentesque ut erat eget leo bibendum euismod. Morbi ut mauris at neque mollis molestie quis at velit. Integer faucibus, lorem sit amet pulvinar elementum, dolor dui ornare purus, eget pretium neque sem at mauris. Vestibulum nec dolor tellus. Vestibulum feugiat accumsan vulputate. Maecenas interdum massa in magna ultrices ac ultrices mauris molestie. Sed pulvinar faucibus pharetra.</p>
+
+<p>Ut vehicula tortor dui, id facilisis orci. Duis lorem sem, dignissim sed sagittis sit amet, porttitor in tellus. Nulla rhoncus vestibulum nisl, porttitor ullamcorper nunc convallis sed. Integer vel lacus ipsum. Vivamus faucibus rhoncus lacinia. Phasellus at est ac nunc ultricies eleifend vitae et ipsum. Aenean vitae accumsan lorem. Maecenas lacinia venenatis mollis. Suspendisse ut ipsum mi. Cras aliquam pulvinar libero, tincidunt euismod metus sollicitudin non. Aenean adipiscing cursus nisl vitae volutpat. Nunc venenatis nunc et ligula cursus mattis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc euismod neque vel eros bibendum consectetur. Sed vel purus ante.</p>
+
+<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas vestibulum imperdiet tortor semper euismod. Sed dui sapien, vehicula ac pretium nec, laoreet et libero. Aliquam eu nibh urna, non dictum sapien. Donec at mauris risus, vitae semper massa. Aenean tempor quam sed erat cursus at dapibus velit pellentesque. Sed quis felis vitae magna dictum scelerisque at ut mi. Donec nibh enim, luctus eu iaculis semper, tempor eget mauris. Donec in tempor nunc. Donec adipiscing sem et risus consequat a cursus mauris facilisis. Nam pharetra sagittis est at hendrerit. Etiam aliquet commodo magna, ac dapibus orci sollicitudin a. Suspendisse mattis viverra aliquam. Vivamus vel ipsum quis ante ornare blandit. Pellentesque ipsum justo, fermentum a blandit id, rutrum eu tortor. Donec non elit nisi, malesuada bibendum justo. Phasellus dignissim dictum erat, et lacinia nibh iaculis tempus. Mauris sed mollis augue. Quisque mattis libero est. Etiam id ultrices augue.</p>
+</div><!-- col_left -->
+<div class="col_right">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae ligula vitae neque porttitor mollis. Sed tempus, elit et imperdiet porttitor, sem libero ultricies nisl, ac molestie dui ante id nisl. Phasellus varius viverra diam, eget molestie nisl porta a. Nullam euismod nisi et odio consequat cursus fermentum nisl eleifend. Etiam in tempus purus. Nunc ac ipsum a augue ultricies tempus. Duis eget ipsum turpis. Donec nulla quam, consequat id vehicula non, bibendum eget eros. Aenean est justo, adipiscing non luctus at, interdum id dolor. Sed sed felis a lorem dictum elementum aliquam id nunc. Quisque magna elit, hendrerit vel rutrum in, pulvinar quis quam. Aliquam sollicitudin neque quis risus semper ac pulvinar lacus porta. Curabitur vel ante ligula. Etiam sit amet urna est, eget pretium diam. Sed eget lorem libero. Phasellus quis justo ac lorem volutpat dapibus quis eget ante. Praesent at dignissim velit. Aenean et libero id sapien pharetra laoreet nec viverra ante.</p>
+
+<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec commodo viverra sodales. Aenean hendrerit, eros eu aliquet venenatis, nisi risus interdum ante, quis convallis neque metus in elit. Quisque in mauris sem. Nulla sodales, odio nec ultrices varius, nisl nulla vehicula erat, sit amet placerat nisl enim vel massa. Phasellus pharetra adipiscing sem, ut pharetra lectus placerat sed. Ut vulputate facilisis odio, eget congue ante porta a. Etiam aliquam eleifend sem, vitae mollis metus rhoncus pellentesque. Etiam ullamcorper tincidunt ipsum ac vehicula. Phasellus rutrum elementum sagittis. Integer volutpat porta volutpat. In fringilla tempus leo vel facilisis. Duis vestibulum molestie lacus, in imperdiet dui pellentesque nec. Quisque non tortor sit amet nunc tincidunt hendrerit ultricies sed sem. Cras odio lorem, rutrum vestibulum fringilla et, ultrices quis eros. Nulla gravida nunc sed magna convallis sit amet congue est semper. Duis id convallis est. Proin ac nibh at ipsum tempus vulputate. Curabitur viverra fringilla fringilla. Pellentesque at purus ac tellus sagittis pretium id nec massa.</p>
+
+<p>Aliquam erat volutpat. Proin pharetra fringilla justo, sed placerat dolor fermentum nec. Nulla facilisi. Nullam at sem libero, sit amet iaculis urna. Pellentesque ut erat eget leo bibendum euismod. Morbi ut mauris at neque mollis molestie quis at velit. Integer faucibus, lorem sit amet pulvinar elementum, dolor dui ornare purus, eget pretium neque sem at mauris. Vestibulum nec dolor tellus. Vestibulum feugiat accumsan vulputate. Maecenas interdum massa in magna ultrices ac ultrices mauris molestie. Sed pulvinar faucibus pharetra.</p>
+
+<p>Ut vehicula tortor dui, id facilisis orci. Duis lorem sem, dignissim sed sagittis sit amet, porttitor in tellus. Nulla rhoncus vestibulum nisl, porttitor ullamcorper nunc convallis sed. Integer vel lacus ipsum. Vivamus faucibus rhoncus lacinia. Phasellus at est ac nunc ultricies eleifend vitae et ipsum. Aenean vitae accumsan lorem. Maecenas lacinia venenatis mollis. Suspendisse ut ipsum mi. Cras aliquam pulvinar libero, tincidunt euismod metus sollicitudin non. Aenean adipiscing cursus nisl vitae volutpat. Nunc venenatis nunc et ligula cursus mattis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc euismod neque vel eros bibendum consectetur. Sed vel purus ante.</p>
+
+<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas vestibulum imperdiet tortor semper euismod. Sed dui sapien, vehicula ac pretium nec, laoreet et libero. Aliquam eu nibh urna, non dictum sapien. Donec at mauris risus, vitae semper massa. Aenean tempor quam sed erat cursus at dapibus velit pellentesque. Sed quis felis vitae magna dictum scelerisque at ut mi. Donec nibh enim, luctus eu iaculis semper, tempor eget mauris. Donec in tempor nunc. Donec adipiscing sem et risus consequat a cursus mauris facilisis. Nam pharetra sagittis est at hendrerit. Etiam aliquet commodo magna, ac dapibus orci sollicitudin a. Suspendisse mattis viverra aliquam. Vivamus vel ipsum quis ante ornare blandit. Pellentesque ipsum justo, fermentum a blandit id, rutrum eu tortor. Donec non elit nisi, malesuada bibendum justo. Phasellus dignissim dictum erat, et lacinia nibh iaculis tempus. Mauris sed mollis augue. Quisque mattis libero est. Etiam id ultrices augue.</p>
+</div><!-- col_right -->
+<div class="bar">
+    <ul class="left">
+        <li class="tools"><a href="#" class="open">Settings</a>
+        	<div class="content">
+            	<h3 class="title">Settings <a class="close">X</a></h3>
+            	<ul class="inner">
+                	<li><a href="#">Change Username</a></li>
+                    <li><a href="#">Edit Theme</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#" class="open" name="400px">Pictures</a>
+        	<div class="content">
+            	<h3 class="title">Pictures <a class="close">X</a></h3>
+            	<p>
+                	Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec commodo viverra sodales. Aenean hendrerit, eros eu aliquet venenatis, nisi risus interdum ante, quis convallis neque metus in elit. Quisque in mauris sem. Nulla sodales, odio nec ultrices varius, nisl nulla vehicula erat, sit amet placerat nisl enim vel massa. Phasellus pharetra adipiscing sem, ut pharetra lectus placerat sed.
+                </p>
+            </div>
+        </li>
+        <li><a href="#" class="open" name="250px">Share</a>
+        	<div class="content">
+            	<h3 class="title">Pictures <a class="close">X</a></h3>
+            	<p>
+                	Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec commodo viverra sodales. Aenean hendrerit, eros eu aliquet venenatis, nisi risus interdum ante, quis convallis neque metus in elit. Quisque in mauris sem. Nulla sodales, odio nec ultrices varius, nisl nulla vehicula erat, sit amet placerat nisl enim vel massa. Phasellus pharetra adipiscing sem, ut pharetra lectus placerat sed.
+                </p>
+            </div>
+        </li>
+    </ul><!-- left -->
+    <ul class="right">
+        <li><a href="#">Angel</a></li>
+        <li><a href="#">Slobodan</a></li>
+        <li><a href="#">Dimitar</a></li>
+        <li><a href="#" class="minimize">&darr;</a></li>
+    </ul><!-- right -->
+</div><!-- bar -->
+</body>
+</html>
