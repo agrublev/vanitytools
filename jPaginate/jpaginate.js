@@ -16,6 +16,8 @@ minimize = minimizing will limit the overall number of elements in the paginatio
 nav_items = when minimize is set to true you can specify how many items to show
 cookies = if you want to use cookies to remember which page the user is on, true by default
 position = specify the position of the pagination, possible options: "before", "after", or "both"
+equal = implements an equal height main element by using the highest possible element use true false
+offset = unfortunately calculating heights with javascript isn't always 100% accurate, so please use this value to make it perfect :) its defaultly set to 50
 
 */
 (function($){
@@ -29,7 +31,9 @@ position = specify the position of the pagination, possible options: "before", "
             minimize: false,
             nav_items: 6,
 			cookies: true,
-			position: "after"
+			position: "after",
+			equal: false,
+			offset: 50
         };
         var options = $.extend(defaults, options);
 
@@ -43,18 +47,35 @@ position = specify the position of the pagination, possible options: "before", "
             //calculate the number of pages we are going to have
             var number_of_pages = Math.ceil(number_of_items/show_per_page);
             
-            //create the pages of the pagination
+			//create the pages of the pagination
             var array_of_elements = [];
             var numP = 0;
             var nexP = show_per_page;
+			
+			var height = 0;
+			var max_height = 0;
             //loop through all pages and assign elements into array
             for (i=1;i<=number_of_pages;i++)
             {    
                 array_of_elements[i] = obj.children().slice(numP, nexP);
+				
+				if (options.equal) {	
+					obj.children().slice(numP, nexP).each(function(){
+						height += $(this).outerHeight(); 
+					});
+					if (height > max_height) max_height = height;
+					height = 0;
+				}
+				
                 numP += show_per_page;
                 nexP += show_per_page;
             }
-            
+			if (options.equal) {	
+				max_height += options.offset;
+				obj.css({"height":max_height});
+			}
+			
+			
             // display first page and set first cookie
 			if (options.cookies == true) {
 				if (get_cookie("current")) {
