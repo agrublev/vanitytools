@@ -1,10 +1,10 @@
-// jHover Plugin for jQuery
+// jHover Plugin for jQuery - Version 0.1
 // by Angel Grablev for Enavu Web Development network (enavu.com)
 // Dual license under MIT and GPL :) enjoy
 /*
 
 To use simply call .jHover() on the element you wish like so:
-$("#content").jHover(); 
+$("ul.hovered").jHover(); 
 
 you can specify the following options:
 active = the class for the element that is currently hovered over

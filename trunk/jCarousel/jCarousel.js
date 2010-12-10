@@ -1,13 +1,16 @@
-// jCarousel Plugin for jQuery
+// jCarousel Plugin for jQuery - Version 0.1
 // by Angel Grablev for Enavu Web Development network (enavu.com)
 // Dual license under MIT and GPL :) enjoy
 /*
 
 To use simply call .jCarousel() on the element you wish like so:
-$("#content").jCarousel(); 
+$(".carousel").jCarousel(); 
 
 you can specify the following options:
-specify
+auto_slide = whether the carousel slides automatically
+key_slide = enable/disable whether you can use left and right arrows to navigate
+hover_pause = enable/disable the pausing of the auto_slide when hovering over the carousel
+auto_slide_seconds = the pause in miliseconds for the automatic rotation (4000 = 4seconds)
 */
 (function($){
     $.fn.jCarousel = function(options) {

@@ -1,4 +1,4 @@
-// jPaginate Plugin for jQuery
+// jPaginate Plugin for jQuery - Version 0.3
 // by Angel Grablev for Enavu Web Development network (enavu.com)
 // Dual license under MIT and GPL :) enjoy
 /*
