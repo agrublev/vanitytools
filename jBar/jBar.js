@@ -1,4 +1,4 @@
-// jBar Plugin for jQuery
+// jBar Plugin for jQuery - Version 0.1
 // by Angel Grablev for Enavu Web Development network (enavu.com)
 // Dual license under MIT and GPL :) enjoy
 /*
