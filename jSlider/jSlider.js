@@ -20,7 +20,9 @@ specify :)
 			speed: 700,
 			navi: true,
 			navi_active_class: "active",
-			navi_class: "navi"
+			navi_class: "navi",
+			auto_slide: true,
+			auto_slide_interval: 2000
         };
         var options = $.extend(defaults, options);
 
@@ -38,7 +40,12 @@ specify :)
 			
 			// initiate first slide
 			slider(1);
-			
+			if(options.auto_slide){
+				var timer = setInterval('next()', options.auto_slide_interval);
+			}
+			function next() {
+				alert('netxt');
+			}
 			// changing the item to be displayed
 			function slider(page, direction) {
 				if (options.navi) createPagination(page);
