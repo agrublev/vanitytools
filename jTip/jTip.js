@@ -1,61 +1,56 @@
-// jTip Plugin for jQuery
+// jTip Plugin for jQuery - Version 0.1
 // by Angel Grablev for Enavu Web Development network (enavu.com)
 // Dual license under MIT and GPL :) enjoy
 /*
 
 To use simply call .jTip() on the element you wish like so:
-$("#content").jTip(); 
+$(".tip").jTip(); 
 
 you can specify the following options:
-specify
+attr = the attribute you want to pull the content from
+tip_class = the class you want to style for the tip, make sure to have a width when styling
+y_coordinate = the distance from the mouse the tip will show in the vertical direction
+x_coordinate = the distance from the mouse the tip will show in the horizontal direction
 */
 (function($){
     $.fn.jTip = function(options) {
         var defaults = {
             attr: "title",
 			tip_class: "tip_window",
-			y_coordinate: 0,
-			x_coordinate: 0
+			y_coordinate: 20,
+			x_coordinate: 20
         };
         var options = $.extend(defaults, options);
 
         return this.each(function() {
             // object is the selected pagination element list
             obj = $(this);
-			obj.css({"position":"relative"});
+			//obj.css({"position":"relative"});
+			
+			$("body").append('<div class="'+options.tip_class+'" style="position:absolute; z-index:999; left:-9999px;"></div>'); 
+			tObj = $("."+options.tip_class);
 			var title_value = obj.attr(options.attr);
-			var title_dom_element = '<div class="'+options.tip_class+'" style="display:none; position:absolute; bottom:0px; right:0px; z-index:999;">'+title_value+'</div>';
-			obj.append(title_dom_element); 
-			tObj = obj.find("."+options.tip_class);
 			
-			
-			
-			obj.mouseover(function(e) {	
-				obj.attr('title','');
-					
+			obj.hover(function(e) {	
 				
-				//Set the X and Y axis of the tooltip
-				tObj.css('top', e.pageY + options.y_coordinate );
-				tObj.css('left', e.pageX + options.y_coordinate );
+				tObj.css({opacity:0.8, display:"none"}).fadeIn(400);
+				obj.removeAttr(options.attr);
+				tObj.css({'left':e.pageX+ options.y_coordinate, 'top':e.pageY+ options.y_coordinate}).html(title_value);
 				
-				//Show the tooltip with faceIn effect
-				tObj.fadeIn('500');
-				tObj.fadeTo('10',0.8);
+				//fading in the tip
+				tObj.stop().fadeTo('10',0.8);
 				
-			}).mousemove(function(e) {
-			
-				//Keep changing the X and Y axis for the tooltip, thus, the tooltip move along with the mouse
-				tObj.css('top', e.pageY + 10 );
-				tObj.css('left', e.pageX + 20 );
-				
-			}).mouseout(function() {
+			}, function(e) {
 			
 				//Put back the title attribute's value
-				obj.attr('title',title_value);
-			
+				obj.attr(options.attr,title_value);
 				//Remove the appended tooltip template
-				tObj.hide();
+				tObj.stop().fadeOut(400);
 				
+			});
+			obj.mousemove(function(e) {
+				//Move the tip with the mouse while moving
+				tObj.css({'top':e.pageY + options.y_coordinate,'left': e.pageX + options.y_coordinate});
 			});
 
 			
