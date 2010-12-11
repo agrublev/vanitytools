@@ -4,34 +4,39 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>jSlider</title>
 <style>
-	.slider {width:600px; height:350px; margin:0 auto; position:relative;}
-	a.next, a.prev {color:#000; background-color:#eee; border:1px solid #fff; outline:1px solid #ccc; text-shadow:-1px -1px 0px #fff; text-decoration:none; z-index:99; padding:0px 5px; display:block;}
-	.next {position:absolute; right:-50px; top:50%;}
-	.prev {position:absolute; left:-50px; top:50%;}
-	a.inactive {color:#ccc; background-color:#fff; border:none; outline:none;}
-	ul.navi {list-style:none; position:absolute; bottom:5px; right:10px;}
-	ul.navi li {float:left; margin-right:5px;}
-	ul.navi li a {background-color:#f00; display:block; height:10px; width:10px; text-indent:-9999px; outline:none;}
-	ul.navi li a.active {background-color:#fff;}
+*{margin:0px; padding:0px;}
+.slider {width:600px; height:350px; margin:50px auto; position:relative;}
+a.next, a.prev {color:#000; background-color:#eee; border:1px solid #fff; outline:1px solid #ccc; text-shadow:-1px -1px 0px #fff; text-decoration:none; z-index:99; padding:0px 5px; display:block; }
+.next {position:absolute; right:-10px; top:50%;}
+.prev {position:absolute; left:-10px; top:50%;}
+a.inactive {color:#ccc; background-color:#fff; border:1px solid #eee; outline:none;}
+ul.navi {list-style:none; position:absolute; bottom:10px; right:5px;}
+ul.navi li {float:left; margin-right:5px;}
+ul.navi li a {background-color:#CCC; display:block; height:10px; width:10px; text-indent:-9999px; outline:none; -moz-border-radius: 5px; border-radius: 5px;-webkit-box-shadow:  0px 0px 2px  #000000;
+-moz-box-shadow: 0px 0px 3px #000000;
+box-shadow: 0px 0px 1px #000000;  }
+ul.navi li a.active {background-color:#fff;}
 </style>
 <script src="../jquery.js"></script>
 <script src="jSlider.js"></script>
 <script>
 $(document).ready(function(){
 
-	$(".slider").jSlider({elem:"div"});
+	$(".slider").jSlider({elem:"div",images:true});
 
 });
 </script>
 </head>
 
 <body>
+<!-- the slider content holder -->
 <div class="slider">
-
-	<div><img src="slider_01.jpg" width="600" height="350" /></div>
+	<!-- the elements inside the slider, have as many as you want -->
+	<div><a href="#"><img src="slider_01.jpg" width="600" height="350" border="0" /></a></div>
     <div><img src="slide_02.jpg" width="600" height="350" /></div>
     <div><img src="slide_03.jpg" width="600" height="350" /></div>
 	
+    <!-- the navigation can be placed ANYWHERE in your document -->
     <a href="#" class="next">&rarr;</a>
     <a href="#" class="prev">&larr;</a>
 

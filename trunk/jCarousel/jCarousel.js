@@ -70,7 +70,7 @@ auto_slide_seconds = the pause in miliseconds for the automatic rotation (4000 =
 				e.preventDefault();
 				slide("next");
 			});
-			$(".previous").live("click", function(e){
+			$(".prev").live("click", function(e){
 				e.preventDefault();
 				slide("previous");
 			});
