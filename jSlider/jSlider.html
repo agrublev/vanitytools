@@ -14,15 +14,17 @@ ul.navi {list-style:none; position:absolute; bottom:10px; right:5px;}
 ul.navi li {float:left; margin-right:5px;}
 ul.navi li a {background-color:#CCC; display:block; height:10px; width:10px; text-indent:-9999px; outline:none; -moz-border-radius: 5px; border-radius: 5px;-webkit-box-shadow:  0px 0px 2px  #000000;
 -moz-box-shadow: 0px 0px 3px #000000;
-box-shadow: 0px 0px 1px #000000;  }
+box-shadow: 0px 0px 1px #000000; }
 ul.navi li a.active {background-color:#fff;}
 </style>
 <script src="../jquery.js"></script>
+<script src="custom_animations.js"></script>
+<script src="custom_easing.js"></script>
 <script src="jSlider.js"></script>
 <script>
 $(document).ready(function(){
 
-	$(".slider").jSlider({elem:"div",images:true});
+	$(".slider").jSlider({elem:"div",images:true, animation: "random"});
 
 });
 </script>

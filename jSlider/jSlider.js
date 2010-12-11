@@ -4,10 +4,25 @@
 /*
 
 To use simply call .jSlider() on the element you wish like so:
-$("ul.hovered").jSlider(); 
+$(".slider").jSlider(); 
 
 you can specify the following options:
-specify :)
+previous_class = the class for the element that navigates to the previous item
+next_class = the class that navigates to the previous item/slide
+inactive = the class that will be set to the previous or next navigations when they are inactive
+elem = the elements inside your slider content item, this can be li's if ur slider is a ul
+animation = the animation is by default set to fade but if you include the custom_animations.js file you can use the following: slideDown, slideUp, slideRight, slideLeft, bounce, explode, fold, scale, random
+easing = by default we use swing easing but if you included the custom_easing.js file you can use the following easing: linear, swing, jswing, easeInQuad, easeOutQuad, easeInOutQuad, easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart, easeInQuint, easeOutQuint, easeInOutQuint, easeInSine, easeOutSine, easeInOutSine, easeInExpo, easeOutExpo, easeInOutExpo, easeInCirc, easeOutCirc, easeInOutCirc, easeInElastic, easeOutElastic, easeInOutElastic, easeInBack, easeOutBack, easeInOutBack, easeInBounce, easeOutBounce, easeInOutBounce
+speed = the speed of the animation
+navi = true/false if you want to have the navigation list to shop up
+navi_active_class = if navi is true you can choose a class to use for the navigation's active item
+navi_class = if navi is true you can choose a class to use for the navigation itself
+auto_slide = true/false to play the slider like a slide show
+auto_slide_interval = time in milliseconds between slides
+auto_pause_hover = if auto_slide is enabled you can choose whether to pause the slider when you hover with your mouse
+click_next = true/false if you want to allow to go to next slide when you click on the slider
+infinite = true/false infinite will make the slider infinite so when you are at the last slide you can click next and go back to the first slide and the same is true for the previous button
+images = true/false if your slider uses an image for each slide enabling this will take that image and set it as the background of the slider so when the animation occurs it feels natural switching
 
 */
 (function($){
@@ -18,7 +33,8 @@ specify :)
 			inactive: "inactive",
 			elem: "div",
 			animation: "fade",
-			speed: 700,
+			easing: "swing",
+			speed: 1200,
 			navi: true,
 			navi_active_class: "active",
 			navi_class: "navi",
@@ -125,12 +141,41 @@ specify :)
 					var img = items[from].find("img").attr("src");
 					obj.css({"background":"url("+img+") center center"});
 				}
-				switch (options.animation) {
+				if (options.animation == "random") {
+					var randomation=["fade","slideDown","slideUp","slideRight","slideLeft","bounce","slideUp","explode","fold","scale"];
+					var randomnumber=Math.floor(Math.random()*10)
+					var animation = randomation[randomnumber];
+				} else {
+					var animation = options.animation;
+				}
+				objChildren.hide();
+				switch (animation) {
 					case "fade":
 						items[page].stop().fadeIn(options.speed);
 						break;
-					case "slide":
-						items[page].stop().slideDown(options.speed);
+					case "slideDown":
+						items[page].stop().show('slide', {direction: 'up', easing: options.easing}, options.speed);
+						break;
+					case "slideUp":
+						items[page].stop().show('slide', {direction: 'down', easing: options.easing}, options.speed);
+						break;
+					case "slideRight":
+						items[page].stop().show('slide', {direction: 'left', easing: options.easing}, options.speed);
+						break;
+					case "slideLeft":
+						items[page].stop().show('slide', {direction: 'right', easing: options.easing}, options.speed);
+						break;
+					case "bounce":
+						items[page].stop().show('bounce', {direction: "up", easing: options.easing}, options.speed);
+						break;
+					case "explode":
+						items[page].stop().show('explode', {direction: "down", easing: options.easing}, options.speed);
+						break;
+					case "fold":
+						items[page].stop().show('fold', {direction: "down", easing: options.easing}, options.speed);
+						break;
+					case "scale":
+						items[page].stop().show('scale', {direction: "down", easing: options.easing}, options.speed);
 						break;
 					default:
 						items[page].show();
