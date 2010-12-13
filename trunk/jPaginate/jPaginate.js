@@ -149,11 +149,19 @@ offset = unfortunately calculating heights with javascript isn't always 100% acc
             }
 			
 			/* code to handle cookies */
-			function set_cookie( name, value ) {		  
-			  $.cookie(name, value);
+			/* code to handle cookies */
+			function set_cookie(c_name,value)
+			{
+				var expiredays = 999;
+				var exdate=new Date();exdate.setDate(exdate.getDate()+expiredays);document.cookie=c_name+"="+escape(value)+
+((expiredays==null)?"":";expires="+exdate.toUTCString());
 			}
-			function get_cookie ( cookie_name )	{
-			 	return $.cookie(cookie_name);
+			function get_cookie(c_name)
+			{
+				if(document.cookie.length>0)
+				{c_start=document.cookie.indexOf(c_name+"=");if(c_start!=-1)
+				{c_start=c_start+c_name.length+1;c_end=document.cookie.indexOf(";",c_start);if(c_end==-1)c_end=document.cookie.length;return unescape(document.cookie.substring(c_start,c_end));}}
+				return"";
 			}
             
 			function paginationCalculator(curr)  {
@@ -194,42 +202,4 @@ offset = unfortunately calculating heights with javascript isn't always 100% acc
         
        
     };
-	jQuery.cookie = function(name, value, options) {
-		if (typeof value != 'undefined') { // name and value given, set cookie
-			options = options || {};
-			if (value === null) {
-				value = '';
-				options.expires = -1;
-			}
-			var expires = '';
-			if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
-				var date;
-				if (typeof options.expires == 'number') {
-					date = new Date();
-					date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
-				} else {
-					date = options.expires;
-				}
-				expires = '; expires=' + date.toUTCString(); // use expires attribute, max-age is not supported by IE
-			}
-			var path = options.path ? '; path=' + (options.path) : '';
-			var domain = options.domain ? '; domain=' + (options.domain) : '';
-			var secure = options.secure ? '; secure' : '';
-			document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
-		} else { // only name given, get cookie
-			var cookieValue = null;
-			if (document.cookie && document.cookie != '') {
-				var cookies = document.cookie.split(';');
-				for (var i = 0; i < cookies.length; i++) {
-					var cookie = jQuery.trim(cookies[i]);
-					// Does this cookie string begin with the name we want?
-					if (cookie.substring(0, name.length + 1) == (name + '=')) {
-						cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-						break;
-					}
-				}
-			}
-			return cookieValue;
-		}
-	};
 })(jQuery);
