@@ -132,7 +132,9 @@ offset = unfortunately calculating heights with javascript isn't always 100% acc
                 }
                 if (curr != 1 && curr != number_of_pages) {
                     nav = start + previous + items + next + end;
-                } else if (curr == number_of_pages){
+                } else if (number_of_pages == 1) {
+					nav = start + previous_inactive + items + next_inactive + end;
+				} else if (curr == number_of_pages){
                     nav = start + previous + items + next_inactive + end;
                 } else if (curr == 1) {
                     nav = start + previous_inactive + items + next + end;
