@@ -15,7 +15,7 @@ specify
         var defaults = {
             content: "div.content",
 			equal_height: false,
-			cookies: true,
+			cookies: false,
 			animate: false,
 			effect: "fade",
 			speed: 400

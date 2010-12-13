@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>jQuery - jPaginate plugin</title>
+<title>jQuery - jTabs plugin</title>
 <style>
 * {margin:0px; padding:0px;}
 .wrap {width:500px; margin:50px auto;}
@@ -19,10 +19,10 @@ div.tabs_content {width:500px; border:1px solid #ccc;}
 div.tabs_content > div {padding:20px;}
 </style>
 <script src="jquery.js"></script>
-<script src="jTabs.js"></script>
+<script src="jTabs.js"></script> 
 <script>
 $(document).ready(function(){
-    $("ul.tabs").jTabs({content: ".tabs_content"});                       
+    $("ul.tabs").jTabs({content: ".tabs_content", animate: true});                       
 });
 </script>
 </head>
