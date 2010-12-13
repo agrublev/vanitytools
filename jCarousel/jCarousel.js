@@ -15,9 +15,9 @@ auto_slide_seconds = the pause in miliseconds for the automatic rotation (4000 =
 (function($){
     $.fn.jCarousel = function(options) {
         var defaults = {
-            auto_slide: true,
-			key_slide: true,
-			hover_pause: true,
+            auto_slide: false,
+			key_slide: false,
+			hover_pause: false,
 			auto_slide_seconds: 4000
         };
         var options = $.extend(defaults, options);
