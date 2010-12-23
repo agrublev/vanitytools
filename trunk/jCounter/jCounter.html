@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jCounter</title>
+<style>
+* {margin:0px; padding:0px;}
+.parent {list-style:none; margin:0px; padding:0px;}
+.parent li {float:left; margin:10px; border:5px solid #eee; width:300px; height:250px; position:relative;}
+.parent li.active {border:5px solid #000;}
+.parent li.inactive {border:5px solid #ccc; -moz-opacity:.50; filter:alpha(opacity=50); opacity:.50;}
+.parent li .title {position:absolute; bottom:0px; left:0px; right:0px; padding:5px; background-color:#000; color:#fff; text-align:center;}
+</style>
+<script src="../jquery.js"></script>
+<script src="jCounter.js"></script>
+<script>
+$(document).ready(function(){
+	$(".counter").jCounter();
+});
+</script>
+</head>
+
+<body>
+<p>Start typing and reach 5 characters. We use the maxlength property of the input field!</p>
+<input type="text" class="counter" style="font-size:1.8em;" maxlength="5" />
+</body>
+</html>
