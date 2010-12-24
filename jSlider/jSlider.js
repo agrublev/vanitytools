@@ -68,7 +68,7 @@ images = true/false if your slider uses an image for each slide enabling this wi
 				//timer = setInterval("slider()", options.auto_slide_interval);
 				var timer = setInterval(function(){ 
 					if (curr < number_of_items) {	
-						slider(++curr, "next"); 
+						slider(curr, "next", curr); 
 					} else {
 						slider(1);
 						curr = 1;
@@ -83,7 +83,7 @@ images = true/false if your slider uses an image for each slide enabling this wi
 				},function(){
 					timer = setInterval(function(){ 
 						if (curr < number_of_items) {	
-							slider(++curr, "next"); 
+							slider(curr, "next", curr); 
 						} else {
 							slider(1);
 							curr = 1;
