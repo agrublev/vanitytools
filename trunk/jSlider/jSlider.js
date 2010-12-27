@@ -138,8 +138,10 @@ images = true/false if your slider uses an image for each slide enabling this wi
 			// custom animation library
 			function show(page, from) {
 				if (options.images) {
-					var img = items[from].find("img").attr("src");
-					obj.css({"background":"url("+img+") center center"});
+					if (number_of_items != 1) {				
+						var img = items[from].find("img").attr("src");
+						obj.css({"background":"url("+img+") center center"});
+					}
 				}
 				if (options.animation == "random") {
 					var randomation=["fade","slideDown","slideUp","slideRight","slideLeft","bounce","slideUp","explode","fold","scale"];
