@@ -1,10 +1,10 @@
-// jHover Plugin for jQuery - Version 0.1
+// jSpotlight Plugin for jQuery - Version 0.1
 // by Angel Grablev for Enavu Web Development network (enavu.com)
 // Dual license under MIT and GPL :) enjoy
 /*
 
 To use simply call .jHover() on the element you wish like so:
-$("ul.hovered").jHover(); 
+$("ul.hovered").jSpotlight(); 
 
 you can specify the following options:
 active = the class for the element that is currently hovered over
@@ -17,7 +17,7 @@ title = here you can enable or disable the title effect by passing in true or fa
 
 */
 (function($){
-    $.fn.jHover = function(options) {
+    $.fn.jSpotlight = function(options) {
         var defaults = {
             active: "active",
             inactive: "inactive",
@@ -49,10 +49,10 @@ title = here you can enable or disable the title effect by passing in true or fa
 				if (options.title) {
 					switch(options.title_effect) {
 					case "fade":
-					  $(this).find("."+options.title_class).stop().fadeIn(options.title_speed);
+					  $(this).find("."+options.title_class).fadeIn(options.title_speed);
 					  break;
 					case "slide":
-					  $(this).find("."+options.title_class).stop().slideDown(options.title_speed);
+					  $(this).find("."+options.title_class).slideDown(options.title_speed);
 					  break;
 					default:
 						$(this).find("."+options.title_class).show();
@@ -65,10 +65,10 @@ title = here you can enable or disable the title effect by passing in true or fa
 				if (options.title) {
 					switch(options.title_effect) {
 					case "fade":
-					  $(this).find("."+options.title_class).stop().fadeOut(options.title_speed);
+					  $(this).find("."+options.title_class).fadeOut(options.title_speed);
 					  break;
 					case "slide":
-					  $(this).find("."+options.title_class).stop().slideUp(options.title_speed);
+					  $(this).find("."+options.title_class).slideUp(options.title_speed);
 					  break;
 					default:
 						$(this).find("."+options.title_class).hide();
