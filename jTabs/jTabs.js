@@ -35,7 +35,7 @@ specify
 			for (i=1;i<=number_of_items;i++) { tabIndex[i] = obj.find("li:nth-child("+i+")"); tabIndex[i].attr("title", i); }
 			
 			// create array tabs
-			for (i=1;i<=number_of_items;i++) { tabs[i] = $(options.content).find("div:nth-child("+i+")"); }
+			for (i=1;i<=number_of_items;i++) { tabs[i] = $(options.content + "> div:nth-child("+i+")"); }
 			
 			// if equal height on
 			if(options.equal_height) {
