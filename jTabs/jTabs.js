@@ -7,7 +7,12 @@ To use simply call .jTabs() on the element that holds your tabs and pass in cont
 $("ul.tabs").jTabs({content: "content_class"}); 
 
 you can specify the following options:
-specify
+content = the element that will hold the divs with the content of each tab
+equal_height = true/false to enable the columns to find the highest tab and set the height across all tabs
+cookies = true/false will use browser cookies to store which tab the user is on
+animate = true/false if you would like to use an animation effect when you switch tabs
+effect = which animation effect would you like to use (default is fade) other option includes slide
+speed = if you have animation to true you can choose how long to take the effect to take place
 
 */
 (function($){
@@ -31,6 +36,7 @@ specify
 			var tabIndex = [];
 			var tabs = [];
 			
+			
 			// create array of tab index items
 			for (i=1;i<=number_of_items;i++) { tabIndex[i] = obj.find("li:nth-child("+i+")"); tabIndex[i].attr("title", i); }
 			
@@ -49,10 +55,11 @@ specify
 			// initiate the current tab
 			if (options.cookies) {
 				if (getCookie("page")) { showTab(getCookie("page")); }
-				else { setCookie("page",1,999)	}
+				else { setCookie("page",1,999); showTab(1);	}
 			} else {
 				showTab(1);
 			}
+			
 			function showTab(num) {
 				tabIndex[num].addClass("active").siblings().removeClass("active");
 				if(!options.animate) { tabs[num].show().siblings().hide(); }
