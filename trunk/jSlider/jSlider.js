@@ -34,12 +34,12 @@ images = true/false if your slider uses an image for each slide enabling this wi
 			elem: "div",
 			animation: "fade",
 			easing: "swing",
-			speed: 1200,
+			speed: 700,
 			navi: true,
 			navi_active_class: "active",
 			navi_class: "navi",
 			auto_slide: false,
-			auto_slide_interval: 8000,
+			auto_slide_interval: 5000,
 			auto_pause_hover: true,
 			click_next: false,
 			infinite: false,
@@ -67,11 +67,13 @@ images = true/false if your slider uses an image for each slide enabling this wi
 			if(options.auto_slide){
 				//timer = setInterval("slider()", options.auto_slide_interval);
 				var timer = setInterval(function(){ 
-					if (curr < number_of_items) {	
-						slider(curr, "next", curr); 
+					if(curr < number_of_items) {
+						slider(curr, "next", curr);
 					} else {
-						slider(1);
-						curr = 1;
+						if (options.infinite) {
+							slider(1, curr, number_of_items);
+							curr = 1;
+						}
 					}
 				}, options.auto_slide_interval);
 			}
@@ -82,11 +84,13 @@ images = true/false if your slider uses an image for each slide enabling this wi
 					clearInterval(timer);
 				},function(){
 					timer = setInterval(function(){ 
-						if (curr < number_of_items) {	
-							slider(curr, "next", curr); 
+						if(curr < number_of_items) {
+							slider(curr, "next", curr);
 						} else {
-							slider(1);
-							curr = 1;
+							if (options.infinite) {
+								slider(1, curr, number_of_items);
+								curr = 1;
+							}
 						}
 					}, options.auto_slide_interval);
 				});
@@ -191,7 +195,7 @@ images = true/false if your slider uses an image for each slide enabling this wi
 					slider(curr, "next", curr);
 				} else {
 					if (options.infinite) {
-						slider(1, curr);
+						slider(1, curr, number_of_items);
 						curr = 1;
 					}
 				}
@@ -202,7 +206,7 @@ images = true/false if your slider uses an image for each slide enabling this wi
 					slider(curr, "prev", curr);
 				 }else {
 					if (options.infinite) {
-						slider(number_of_items, curr);
+						slider(number_of_items, curr, 1);
 						curr = number_of_items;
 					}
 				}
