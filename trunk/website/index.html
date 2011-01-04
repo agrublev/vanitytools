@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>vanity jquery toolset - brought to you by the enavu network</title>
+<meta name="description" content="vanity is one of the most advanced jquery plugin sets ever made. brining you jquery plugins like jSlider, jPaginate, jTabs, jSpotlight, jTip, and jPlaceholder." />
+<link rel="stylesheet" type="text/css" media="screen" href="http://c.fzilla.com/1285103330-default-style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+<script src="js/jquery.js"></script>
+<script src="js/custom_animations.js"></script>
+<script src="js/custom_easing.js"></script>
+<script src="js/jSlider.js"></script>
+<script>
+$(document).ready(function(){
+
+	$(".slider").jSlider({elem:"div",images:true, animation: "random",auto_slide: true, auto_slide_interval:20000, infinite: true});
+
+});
+</script>
+
+</head>
+
+<body>
+<div class="wrap">
+	<div class="header">
+    	<a href="#"><img src="images/logo.png" width="204" height="71" class="left" /></a>
+        <ul class="nav right">
+        	<li class="active"><a href="#">home</a></li>
+            <li><a href="documentation.html">documentation & demos</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">download</a></li>
+        </ul><!-- nav -->
+        <div class="clear"></div>
+    </div><!-- header -->
+</div><!-- wrap -->
+<div class="slider_wrap">
+    <div class="slider">
+    	<!-- the elements inside the slider, have as many as you want -->
+        <div><a href="#"><img src="images/slide_01.jpg" width="900" height="270" border="0" /></a></div>
+        <div><img src="images/slide_02.jpg" width="900" height="270" border="0" /></div>
+        <!-- the navigation can be placed ANYWHERE in your document -->
+        <a href="#" class="next"><img src="images/right_arrow.png" width="35" height="34" /></a>
+        <a href="#" class="prev"><img src="images/left_arrow.png" width="35" height="34" /></a>
+    </div><!-- slider -->
+</div><!-- slider_wrap -->
+<div class="wrap">
+    <div class="content">
+    	<p style="margin:15px 0px; text-align:center;">
+        	<a href="http://www.freedcamp.com"><img src="http://c.fzilla.com/1293048502-freepoject.jpg" width="728" height="90" alt="Free Project Management - Freedcamp" /></a>
+        </p>
+    	<h2>Making Magic Happen</h2>
+        <p>The vanity toolset was started as more of an initative to create simpler (less code) and easier to implement plugins, the aftermath is a set of tools (still growing) that not only makes it very easy to implement but also are done in the lightest footprint any plugin has ever been written in. The set includes what we believe to be some of the most important make up your site can use. We are also constantly looking for ways to make the plugins better, anyone who has requested a feature has found us adding their suggestion if not in the native version as an extra js file you can implement. We didn't stop there though, the enavu network is also responsible for the <a href="http://www.52framework.com">52framework</a> which uses the latest and greatest in HTML5 and CSS3 technologies in an easy to use Framework that anyone can use today. We support browsers so much, that our little slide you can see above works on the iPhone. Anyways that's all we wanted to say, have fun and please never fear to <a href="#">request features or report bugs</a>!</p>
+    </div><!-- content -->
+    <div class="footer">
+    	all rights reserved &copy; the <a href="http://www.enavu.com">enavu network</a>
+    </div><!-- footer -->
+</div><!-- wrap -->
+<script type="text/javascript" src="//www.hellobar.com/hellobar.js"></script>
+<script type="text/javascript">
+    new HelloBar(6376,4079);
+</script>
+<noscript>
+    The Hello Bar is a simple <a href="https://www.hellobar.com">web toolbar</a> that engages users and communicates a call to action.
+</noscript>
+</body>
+</html>
