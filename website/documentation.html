@@ -31,6 +31,7 @@ $(document).ready(function(){
 .docs_left ul li.jspotlight a {background:url(images/spotlight.jpg) no-repeat left center;}
 .docs_left ul li.jtip a {background:url(images/tip.jpg) no-repeat left center;}
 .docs_left ul li.jplaceholder a {background:url(images/placeholder.jpg) no-repeat left center;}
+.docs_left ul li.jcollapse a {background:url(images/collapse.jpg) no-repeat left center;}
 
 .docs_left ul li a:hover, .docs_left ul li.active a {background-position:right;}
 
@@ -69,6 +70,7 @@ $(document).ready(function(){
                 <li class="jspotlight"><a href="#">jSpotlight</a></li>
                 <li class="jtip"><a href="#">jTip</a></li>
                 <li class="jplaceholder"><a href="#">jPlaceholder</a></li>
+                <li class="jcollapse"><a href="#">jCollapse</a></li>
             </ul>
         </div><!-- docs_left -->
         <div class="docs_right">
@@ -390,8 +392,36 @@ $(document).ready(function(){
         	</div>
         	<!-- end jtip content div -->
             
-            
-            
+            <!-- start jcollapse content div -->
+            <div>
+            <h1>jCollapse</h1>
+            <div class="options">
+            	<a href="#"><img src="images/stand_alone_demo.png" width="197" height="29" alt="stand alone demo" /></a> <a href="#"><img src="images/download.png" width="137" height="29" title="download" /></a>
+            </div><!-- options -->
+            <div class="clear"></div>
+            <h3>Code Examples</h3>
+            <p>html code needed</p>
+            <pre class="html">
+&lt;a href=&quot;#&quot; class=&quot;collapse&quot; rel=&quot;#collapsibleElement&quot;&gt;Expand&lt;/a&gt;
+&lt;div id=&quot;collapsibleElement&quot;&gt;
+	Test Content Number 1
+&lt;/div&gt;
+            </pre>
+            <p>javascript code needed</p>
+            <pre class="js">
+$(document).ready(function(){
+    $(".collapse").jCollapse({effect: "fade"});                       
+});       </pre>
+            <br /><br />
+            <h3>Documentation</h3>
+            <p>The collapse is very easy to use with only a few options to modify.</p>
+            <ul class="jquery_options">
+                <li><span>expand_text</span> enter the text you want the link to contain before the user has expanded the elements default is "expand"</li>
+                <li><span>collapse_text</span> the text you want after the user expands the element(s) default is "Collapse" (commonly you can use More and Less)</li>	
+                <li><span>effect</span> this will be the effect that will change the way the new element/s show up, available options are: display, slide, fade	</li>
+            </ul>
+            </div>
+            <!-- end jcollapse content div -->
         	</div><!-- tabs_content -->
         </div><!-- docs_right -->
         <div class="clear"></div>

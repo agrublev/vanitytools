@@ -24,7 +24,7 @@ x_coordinate = the distance from the mouse the tip will show in the horizontal d
 
         return this.each(function() {
             // object is the selected pagination element list
-            obj = $(this);
+            var obj = $(this);
 			//obj.css({"position":"relative"});
 			
 			$("body").append('<div class="'+options.tip_class+'" style="position:absolute; z-index:999; left:-9999px;"></div>'); 

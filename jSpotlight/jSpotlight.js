@@ -31,7 +31,7 @@ title = here you can enable or disable the title effect by passing in true or fa
 
         return this.each(function() {
             // object is the selected pagination element list
-            obj = $(this);
+            var obj = $(this);
 			// if titling is enabled add the title element to each of the children
 			if (options.title) {
 				obj.children().each(function(){

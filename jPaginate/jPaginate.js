@@ -3,7 +3,7 @@
 // Dual license under MIT and GPL :) enjoy
 /*
 
-To use simply call .paginate() on the element you wish like so:
+To use simply call .jPaginate() on the element you wish like so:
 $("#content").jPaginate(); 
 
 you can specify the following options:
@@ -39,7 +39,7 @@ offset = unfortunately calculating heights with javascript isn't always 100% acc
 
         return this.each(function() {
             // object is the selected pagination element list
-            obj = $(this);
+            var obj = $(this);
             // this is how you call the option passed in by plugin of items
             var show_per_page = options.items;
             //getting the amount of elements inside parent element
