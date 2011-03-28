@@ -100,11 +100,12 @@ images = true/false if your slider uses an image for each slide enabling this wi
 			if(options.click_next) {
 				objChildren.click("click", function(e){
 					e.preventDefault();
-					if(curr < number_of_items) { curr++; slider(curr, "next"); } 
-					else {
+					if(curr < number_of_items) {
+						slider(curr, "next", curr);
+					} else {
 						if (options.infinite) {
+							slider(1, curr, number_of_items);
 							curr = 1;
-							slider(curr);
 						}
 					}
 				});
